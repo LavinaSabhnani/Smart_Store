@@ -1,0 +1,52 @@
+<html>
+<head>
+
+<script  src="jquery.min.js">
+</script>
+<script src="jquery.validate.min.js">
+</script>
+<script >
+
+$(document).ready(function(){
+$("#myForm").validate({
+rules:{
+		   username:{required:true},
+		   email:    {
+				required:true,
+				email:true
+			     },
+			phone:{required:true,
+				 digits:true,
+				 minlength:10},
+		password:  {
+				required:true,
+				minlength:6
+		          },
+},
+messages:           {
+			username:{required:"Enter Proper Username"},
+			email:{required:"Enter Correct Email Id",email:"Valid format is name@domain.com"},
+			phone:{required:"Enter Correct Phone number",minlength:"Minimum Length of 10 required"}
+			password:{minlength:"Minimum Length of 6 required"},
+			}
+});
+});
+</script>
+</head>
+<body>
+<form id="myForm">
+
+						
+ 
+                        Enter your Username <input type="text" name="username" >
+ <br>
+						Enter your Email Id<input type="email" name="email" >
+ <br>
+						Enter Contact number<input type="tel" name="phone">
+						<br>
+                        Enter your Password<input type="password" name="password" >
+ <br>
+						<input type="submit" value="Submit">
+</form> 
+</body>
+</html>
